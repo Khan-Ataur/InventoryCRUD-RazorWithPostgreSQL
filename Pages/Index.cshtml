@@ -1,0 +1,100 @@
+@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home";
+}
+
+<div class="text-center">
+    <div class="jumbotron py-5">
+        <h1 class="display-3">
+            <i class="bi bi-shop text-primary"></i> 
+            Product Management System
+        </h1>
+        <p class="lead mt-3">
+            A complete CRUD application built with .NET 8, Razor Pages, and PostgreSQL
+        </p>
+        <hr class="my-4" />
+        <p class="mb-4">
+            This application demonstrates a full-stack product management system with stored procedures for database operations.
+        </p>
+        <div class="d-grid gap-2 d-md-block">
+            <a class="btn btn-primary btn-lg" asp-page="/Products/Index" role="button">
+                <i class="bi bi-box-seam"></i> View Products
+            </a>
+            <a class="btn btn-success btn-lg" asp-page="/Products/Create" role="button">
+                <i class="bi bi-plus-circle"></i> Add New Product
+            </a>
+            <a class="btn btn-info btn-lg text-white" href="/swagger" target="_blank" role="button">
+                <i class="bi bi-code-slash"></i> API Documentation
+            </a>
+        </div>
+    </div>
+
+    <div class="row mt-5">
+        <div class="col-md-4">
+            <div class="card shadow-sm h-100">
+                <div class="card-body text-center">
+                    <i class="bi bi-database-fill-gear" style="font-size: 3rem; color: #0d6efd;"></i>
+                    <h3 class="card-title mt-3">PostgreSQL</h3>
+                    <p class="card-text">
+                        Robust database with stored procedures for all CRUD operations
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card shadow-sm h-100">
+                <div class="card-body text-center">
+                    <i class="bi bi-file-earmark-code" style="font-size: 3rem; color: #198754;"></i>
+                    <h3 class="card-title mt-3">Razor Pages</h3>
+                    <p class="card-text">
+                        Modern web UI with Bootstrap 5 for a responsive user experience
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card shadow-sm h-100">
+                <div class="card-body text-center">
+                    <i class="bi bi-code-square" style="font-size: 3rem; color: #6f42c1;"></i>
+                    <h3 class="card-title mt-3">RESTful API</h3>
+                    <p class="card-text">
+                        Complete REST API with Swagger documentation for integration
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-4">
+        <div class="col-md-12">
+            <div class="card shadow-sm">
+                <div class="card-header bg-dark text-white">
+                    <h4 class="mb-0">
+                        <i class="bi bi-info-circle"></i> Features
+                    </h4>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <ul class="list-unstyled">
+                                <li><i class="bi bi-check-circle-fill text-success"></i> Create, Read, Update, Delete Products</li>
+                                <li><i class="bi bi-check-circle-fill text-success"></i> PostgreSQL Stored Procedures</li>
+                                <li><i class="bi bi-check-circle-fill text-success"></i> Responsive Bootstrap 5 UI</li>
+                                <li><i class="bi bi-check-circle-fill text-success"></i> Repository Pattern</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <ul class="list-unstyled">
+                                <li><i class="bi bi-check-circle-fill text-success"></i> RESTful API Endpoints</li>
+                                <li><i class="bi bi-check-circle-fill text-success"></i> Swagger/OpenAPI Documentation</li>
+                                <li><i class="bi bi-check-circle-fill text-success"></i> Async/Await Operations</li>
+                                <li><i class="bi bi-check-circle-fill text-success"></i> Error Handling & Validation</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

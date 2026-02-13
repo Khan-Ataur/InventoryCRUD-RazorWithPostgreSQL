@@ -1,0 +1,85 @@
+@page
+@model ProductCRUDrazorWithPostgresql.Pages.Products.DetailsModel
+@{
+    ViewData["Title"] = "Product Details";
+}
+
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <div class="card shadow-sm">
+                <div class="card-header bg-info text-white">
+                    <h3 class="mb-0">
+                        <i class="bi bi-info-circle"></i> Product Details
+                    </h3>
+                </div>
+                <div class="card-body">
+                    <dl class="row">
+                        <dt class="col-sm-3">Product ID</dt>
+                        <dd class="col-sm-9">
+                            <span class="badge bg-secondary">@Model.Product.Id</span>
+                        </dd>
+
+                        <dt class="col-sm-3">Name</dt>
+                        <dd class="col-sm-9">
+                            <strong>@Model.Product.Name</strong>
+                        </dd>
+
+                        <dt class="col-sm-3">Description</dt>
+                        <dd class="col-sm-9">
+                            @Model.Product.Description
+                        </dd>
+
+                        <dt class="col-sm-3">Price</dt>
+                        <dd class="col-sm-9">
+                            <h4><span class="badge bg-success">$@Model.Product.Price.ToString("N2")</span></h4>
+                        </dd>
+
+                        <dt class="col-sm-3">Stock Quantity</dt>
+                        <dd class="col-sm-9">
+                            @if (Model.Product.Stock > 10)
+                            {
+                                <span class="badge bg-success fs-5">@Model.Product.Stock units</span>
+                            }
+                            else if (Model.Product.Stock > 0)
+                            {
+                                <span class="badge bg-warning text-dark fs-5">@Model.Product.Stock units</span>
+                            }
+                            else
+                            {
+                                <span class="badge bg-danger fs-5">Out of Stock</span>
+                            }
+                        </dd>
+
+                        <dt class="col-sm-3">Created At</dt>
+                        <dd class="col-sm-9">
+                            <i class="bi bi-calendar"></i> @Model.Product.CreatedAt.ToString("MMMM dd, yyyy - hh:mm tt")
+                        </dd>
+
+                        @if (Model.Product.UpdatedAt.HasValue)
+                        {
+                            <dt class="col-sm-3">Last Updated</dt>
+                            <dd class="col-sm-9">
+                                <i class="bi bi-clock-history"></i> @Model.Product.UpdatedAt.Value.ToString("MMMM dd, yyyy - hh:mm tt")
+                            </dd>
+                        }
+                    </dl>
+
+                    <hr />
+
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                        <a asp-page="Index" class="btn btn-secondary">
+                            <i class="bi bi-arrow-left"></i> Back to List
+                        </a>
+                        <a asp-page="Edit" asp-route-id="@Model.Product.Id" class="btn btn-warning">
+                            <i class="bi bi-pencil"></i> Edit
+                        </a>
+                        <a asp-page="Delete" asp-route-id="@Model.Product.Id" class="btn btn-danger">
+                            <i class="bi bi-trash"></i> Delete
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
